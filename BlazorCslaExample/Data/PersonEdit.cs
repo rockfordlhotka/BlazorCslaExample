@@ -43,6 +43,7 @@ namespace BlazorCslaExample.Data
     {
       base.AddBusinessRules();
       BusinessRules.AddRule(new CalculateAge(BirthdateProperty, AgeProperty));
+      BusinessRules.AddRule(new NoSingleName(NameProperty));
     }
 
     [Create]
