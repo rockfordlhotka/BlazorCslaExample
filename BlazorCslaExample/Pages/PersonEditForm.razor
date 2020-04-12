@@ -17,7 +17,7 @@ else
   <ValidationSummary />
   @*<div>Id @person.Id</div>*@
   <InputText @bind-Value="person.Name" />
-  <CslaValidationMessages PropertyName="Name" />
+  <CslaValidationMessages For="() => person.Name" />
   <InputDate @bind-Value="person.Birthdate" />
   <div>@person.Name is @person.Age years old</div>
   @*<div>Object is new: @person.IsNew</div>

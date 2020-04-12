@@ -49,7 +49,7 @@ namespace BlazorCslaExample.Data
     [Create]
     [RunLocal]
     private void Create()
-    { 
+    {
       using (BypassPropertyChecks)
       {
         Id = -1;
@@ -59,7 +59,7 @@ namespace BlazorCslaExample.Data
 
     [Fetch]
     private void Fetch(int id)
-    { 
+    {
       using (BypassPropertyChecks)
       {
         Id = id;
@@ -70,9 +70,15 @@ namespace BlazorCslaExample.Data
       MarkOld();
     }
 
-    [Insert][Update]
+    [Insert]
+    [Update]
     private void InsertOrUpdate()
     {
+      using (BypassPropertyChecks)
+      {
+        if (Id == -1)
+          Id = 1; // simulate database creating primary key
+      }
     }
   }
 }
